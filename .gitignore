@@ -1,0 +1,52 @@
+# Jetbrains Webstorm IDE config:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/workspace.xml
+.idea/tasks.xml
+/.idea/codeStyles
+
+# vscode settings
+/.vscode
+
+# VIM pollution
+*.swp
+*.swo
+*.swn
+*.swm
+
+# OS X stuff
+.DS_Store
+
+# NPM
+npm-debug.log
+
+/node_modules
+
+/build/*
+!/build/package.json
+
+# ignore istanbul code coverage
+/coverage
+
+# aws cli
+awscli-bundle/*
+
+# artifact creation
+/artifact/*
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# see https://www.gitignore.io/api/git
