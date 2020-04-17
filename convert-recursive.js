@@ -19,8 +19,7 @@ const run = async () => {
   const { dstDir } = await converter.convertRecursive(options.directory);
   // console.log(`Successfully converted ${files.length} files:`);
   // console.dir(files);
-  // console.log(`opening ${dstDir} in Finder...`);
-  // childProcess.execSync(`open ${dstDir}`);
+  console.log(`opening ${dstDir} in Finder...`);
   childProcess.spawnSync('open', [dstDir]);
 };
 
