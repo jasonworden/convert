@@ -1,19 +1,19 @@
 const Bluebird = require('bluebird');
-const FlacConverter = require('./lib/flac-converter.js');
+const VideoConverter = require('./lib/video-converter.js');
 const childProcess = require('child_process');
 const commandLineArgs = require('command-line-args');
 
 const OPTION_DEFINITIONS = [
   { name: 'directory', alias: 'd', type: String },
-  { name: 'encoding', alias: 'e', type: String, defaultValue: 'aac' },
-  // { name: 'itunes-library-to-add-to', alias: 'i', type: String },
+  { name: 'inputExt', alias: 'i', type: String, defaultValue: 'mkv' },
+  { name: 'outputExt', alias: 'o', type: String, defaultValue: 'mov' },
 ];
 
 const options = commandLineArgs(OPTION_DEFINITIONS);
 console.log('options:');
 console.dir(options);
 
-const converter = new FlacConverter({ encoding: options.encoding });
+const converter = new VideoConverter([options.inputExt], options.outputExt);
 
 const run = async () => {
   const { dstDir } = await converter.convertRecursive(options.directory);
